@@ -18,7 +18,7 @@ const OUTPUT_ASSETS_PATH = path.resolve('./', PROJECT_BUILD_DIR)
  * Actually it's a directory into src/themes/<flavor> that you can make more
  * sub-themes.
  */
-const PROJECT_THEME_NAME = 'egelance_official'
+const PROJECT_THEME_NAME = 'official'
 const PROJECT_THEME_PATH = path.resolve('./', PROJECT_SRC_DIR, './themes', PROJECT_THEME_NAME)
 
 module.exports = {
