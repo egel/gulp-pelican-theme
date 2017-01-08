@@ -20,6 +20,7 @@ const OUTPUT_ASSETS_PATH = path.resolve('./', PROJECT_BUILD_DIR)
  */
 const PROJECT_THEME_NAME = 'official'
 const PROJECT_THEME_PATH = path.resolve('./', PROJECT_SRC_DIR, './themes', PROJECT_THEME_NAME)
+const OUTPUT_ZIP_FILENAME = pkg.name + '_' + PROJECT_THEME_NAME
 
 module.exports = {
   project_src_dir: PROJECT_SRC_DIR,
@@ -38,7 +39,7 @@ module.exports = {
   output_js_path: path.resolve('./', PROJECT_BUILD_DIR, './static/js/'),
   output_js_filename: pkg.name + '-v' + pkg.version,
 
-  output_zip_filename: this.output_js_filename + "asdf",
+  output_zip_filename: OUTPUT_ZIP_FILENAME,
 
   additonal_plugins: {
     git_last_commit: {
