@@ -19,11 +19,11 @@ gulp.task('build-sass', function () {
     .pipe(gulpif(buildOptions.production, sourcemaps.init()))
     .pipe(sass({
       errLogToConsole: true,
-      indentedSyntax: true,
+      indentedSyntax: false,
       outputStyle: 'expanded'
     }).on('error', sass.logError))
     .pipe(addSrc.prepend(buildConfig.vendor_files.css_all))
-    .pipe(concat(buildConfig.output_css_filename + '.css'))  // fixme: -> styles
+    .pipe(concat(buildConfig.output_css_filename + '.css'))
     .pipe(autoprefixer({
       browsers: ['last 3 versions']
     }))

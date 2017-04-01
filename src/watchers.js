@@ -28,13 +28,22 @@ gulp.task('watchers', function() {
     console.log(chalk.yellow('[SASS] ' + chalk.yellow(e.path)))
   })
 
-  // HTML
-  gulp.watch(buildConfig.app_files.html, function() {
+  // Framework HTML
+  gulp.watch(buildConfig.app_files.html_files, function() {
     runSequence('copy-html')
   })
   .on('change', function(e) {
-    runSequence('copy-html')
-    console.log(chalk.yellow('[HTML] ' + chalk.yellow(e.path)))
+    runSequence('copy-html', 'html-index-inject', 'replace-for-packages-json-variables')
+    console.log(chalk.yellow('[THEME HTML] ' + chalk.yellow(e.path)))
+  })
+
+  // Enabled plugins
+  gulp.watch(buildConfig.app_files.used_plugins, function() {
+    runSequence('copy-used_plugins')
+  })
+  .on('change', function(e) {
+    runSequence('copy-used_plugins', 'html-index-inject', 'replace-for-packages-json-variables')
+    console.log(chalk.yellow('[THEME PLUGINS] ' + chalk.yellow(e.path)))
   })
 })
 

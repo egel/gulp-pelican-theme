@@ -71,7 +71,7 @@ module.exports = {
       path.resolve('./', PROJECT_SRC_DIR, './framework/html/**')
     ],
     used_plugins: [
-      path.resolve('./', PROJECT_SRC_DIR, './framework/plugins/tipuesearch/**')
+      path.resolve('./', PROJECT_SRC_DIR, './framework/plugins/**')
     ]
   },
 
